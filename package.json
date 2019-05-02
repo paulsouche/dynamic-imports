@@ -1,0 +1,11 @@
+{
+  "name": "dynamic-imports",
+  "version": "1.0.0",
+  "description": "Experimentations on webpack dynamic imports",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.0.0"
+  }
+}
