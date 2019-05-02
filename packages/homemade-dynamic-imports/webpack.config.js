@@ -31,9 +31,10 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'file-loader',
+        type: 'javascript/auto',
         include: root('src', 'static.json'),
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]'
         }
       },
     ]

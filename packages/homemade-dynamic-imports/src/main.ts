@@ -1,8 +1,6 @@
-import './static.json';
-
 async function bootstrap() {
   document.write('<div id="app">Hello Dynamic imports!</div>');
-  const { origin } = await import('./in-bundle.json');
+  let { origin } = await import('./in-bundle.json');
   const root = document.getElementById('app');
 
   if (!root) {
@@ -12,6 +10,11 @@ async function bootstrap() {
   const bundleOrigin = document.createElement('div');
   bundleOrigin.innerText = `Hello json from ${origin}`
   root.appendChild(bundleOrigin);
+
+  ({ origin } = await import('./static.json'));
+  const staticOrigin = document.createElement('div');
+  staticOrigin.innerText = `Hello json from ${origin}`
+  root.appendChild(staticOrigin);
 }
 
 bootstrap();
